@@ -7,4 +7,4 @@ Mostly focused on system administration since it covers most topics, but anythin
 I appriciate if you want to contribute to make this an excellent tool!
 
 TO DO:
--Add chapters to every difficulty.
+Add chapters to every difficulty.
