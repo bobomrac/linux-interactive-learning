@@ -1,5 +1,5 @@
 # learn-linux-interactive-terminal
-Shell script that teaches Linux with interactive tasks.
+Shell script that teaches Linux by giving interactive tasks.
 
 The goal with this script is to give new Linux-users a 'guided textbook experience' inside the terminal with interactive tasks.
 Mainly focused on system administration tasks since it covers most topics, but anything relevant is welcomed into the script.
