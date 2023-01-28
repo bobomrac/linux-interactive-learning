@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+echo "Basic Package Management - Beginner"
+echo "This level will guide you through basic package management."
+echo ""
+echo "installing/removing software"
+echo "update software and system"
+echo "dependencies"
+read -p "Press enter to go back to the main menu."
+show_main_menu

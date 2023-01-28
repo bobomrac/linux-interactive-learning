@@ -1,5 +1,5 @@
 #!/bin/bash
-    cd "~"
+    cd ~
     clear
     echo "File Management - Beginner level selected."
     echo "This level will guide you through basic file management."
