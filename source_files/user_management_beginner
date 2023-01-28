@@ -1,0 +1,28 @@
+#!/bin/bash
+    cd 
+    clear
+    echo "User Management - Beginner level selected."
+    echo "This level will guide you through basic user management tasks."
+    echo ""
+    echo "Step 1:"
+    echo ""
+    read -p "Enter command: "
+    eval "command"
+    echo ""
+    echo "Step 2:"
+    echo ""
+    read -p "Enter command: "
+    eval "command"
+    echo ""
+    echo "Step 3:"
+    echo ""
+    read -p "Enter command: "
+    eval "command"
+    echo ""
+    echo "Step 4:"
+    echo ""
+    read -p "Enter command: "
+    eval "command"
+    echo ""
+    read -p "Press enter to go back to the main menu"
+    show_main_menu
