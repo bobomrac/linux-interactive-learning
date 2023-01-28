@@ -1,0 +1,105 @@
+    Terminal Navigation: Beginner level (basic terminal commands, basic text editing)
+
+    File Management: Beginner level (creating and deleting files and directories)
+
+    Package Management: Beginner level (installing and updating software, managing package dependencies)
+
+    System Configuration: Beginner level (configuring storage and system resources, configuring system startup)
+
+    User Management: Beginner level (managing users and groups, managing user permissions)
+
+    Network Configuration: Beginner level (configuring network interfaces and routes, basic network troubleshooting)
+
+    System Monitoring: Beginner level (monitoring system performance and resources, viewing log files)
+
+    Security: Beginner level (basic firewall configuration, basic security hardening, basic intrusion detection)
+
+    Terminal Navigation: Intermediate level (Bash scripting, regular expressions, command line utilities)
+
+    File Management: Intermediate level (file compression and archiving, file search and syncing, file system maintenance)
+
+    Package Management: Intermediate level (managing package repositories, package versioning and rollback, package virtualization)
+
+    System Configuration: Intermediate level (advanced disk management, advanced system tuning and startup, advanced process management)
+
+    User Management: Intermediate level (managing user accounts and authentication, managing user environments and processes, managing user quotas)
+
+    Network Configuration: Intermediate level (advanced network configuration, advanced network troubleshooting, network security and services)
+
+    System Monitoring: Intermediate level (advanced system and process monitoring, advanced network monitoring, advanced log management)
+
+    Security: Intermediate level (advanced security hardening, advanced intrusion detection, advanced encryption)
+
+    Terminal Navigation: Advanced level (advanced Bash scripting, advanced text processing)
+
+    File Management: Advanced level (advanced file system management and performance tuning, advanced file system backup and recovery, file system encryption)
+
+    Package Management: Advanced level (advanced package management, package management in enterprise, cloud and virtualized environments)
+
+    System Configuration: Advanced level (advanced system tuning, advanced system initialization, advanced kernel management)
+
+    User Management: Advanced level (advanced user and group management, advanced user authentication and environment management)
+
+    Network Configuration: Advanced level (advanced network routing, advanced network services and security, advanced network troubleshooting)
+
+    System Monitoring: Advanced level (advanced system performance monitoring, advanced network performance monitoring, advanced incident response)
+
+    Security: Advanced level (advanced firewall configuration, advanced intrusion detection, advanced incident response)
+    
+-----------------------------------------------------
+        Terminal Navigation:
+    Beginner: Basic terminal commands (ls, cd, pwd, etc.), Basic text editing (nano, vi, etc.)
+    
+    Intermediate: Bash scripting, Regular expressions, Wildcards, Command line utilities, Pipes and redirection
+    
+    Advanced: Advanced Bash scripting (functions, arrays, etc.), Advanced command line utilities (sed, awk, etc.), Advanced regular expressions (grep, etc.), Advanced text processing (sed, awk, etc.)
+-----------------------------------------------------
+    File Management:
+    Beginner: Creating and deleting files and directories (touch, mkdir, rm, etc.),
+    
+    Intermediate: File compression and archiving (tar, gzip, etc.), File search (find, grep, etc.), File syncing and backup (rsync, etc.), File system maintenance (fsck, etc.)
+    
+    Advanced: Advanced file system management (xfs, btrfs, etc.), Advanced file system performance tuning, Advanced file system backup and recovery, File system encryption
+-----------------------------------------------------
+    User Management:
+    Beginner: Managing users (useradd, userdel, etc.), Managing groups (groupadd, groupmod, etc.), Managing user permissions (sudo, chmod, chown etc.)
+    
+    Intermediate: Managing user accounts and authentication (pam, etc.), Managing user environments (bashrc, etc.), Managing user processes (kill, etc.), Managing user quotas (quota, etc.)
+    
+    Advanced: Advanced user and group management (LDAP, etc.), Advanced user authentication (SSH, etc.), Advanced user environment management (bash, etc.)
+-----------------------------------------------------
+    Package Management:
+    Beginner: Installing and updating software (apt, yum, etc.), Removing software (apt, yum, etc.), Managing package dependencies (apt, yum, etc.)
+    
+    Intermediate: Package management from source, Managing package repositories, Package versioning and rollback, Package virtualization
+    
+    Advanced: Advanced package management (dpkg, etc.), Package management in enterprise environments (puppet, etc.), Package management in cloud environments (ansible, etc.), Package management in virtualized environments (docker, etc.)
+-----------------------------------------------------
+    System Configuration:
+    Beginner: Configuring storage (fdisk, parted, lvm, etc.), Configuring system resources (sysctl, etc.), Configuring system startup (systemctl, etc.)
+    
+    Intermediate: Advanced disk management (lvm, etc.), Advanced system tuning (sysctl, etc.), Advanced system startup (systemd, etc.), Advanced process management (systemd, etc.)
+    
+    Advanced: Advanced system tuning (sysctl, etc.), Advanced system initialization (systemd, etc.), Advanced process management (systemd, etc.), Advanced kernel management (modprobe, etc.)
+-----------------------------------------------------
+    Network Configuration:
+    Beginner: Configuring network interfaces (ifconfig, ip, etc.), Configuring network routes (route, etc.), Basic network troubleshooting (ping, traceroute, etc.)
+    
+    Intermediate: Advanced network configuration (iproute2, etc.), Advanced network troubleshooting (tcpdump, etc.), Network security (iptables, etc.), Network services (dns, dhcp, etc.)
+    
+    Advanced: Advanced network routing (OSPF, etc.), Advanced network services (DNS, DHCP, etc.), Advanced network security (IPsec, etc.), Advanced network troubleshooting (tcpdump, etc.)
+-----------------------------------------------------
+    System Monitoring:
+    Beginner: Monitoring system performance (top, ps, etc.), Monitoring system resources (free, df, etc.), Viewing log files (dmesg, syslog, etc.)
+    
+    Intermediate: Advanced system monitoring (strace, etc.), Advanced process monitoring (lsof, etc.), Advanced network monitoring (netstat, etc.), Advanced log management (rsyslog, etc.)
+    
+    Advanced: Advanced system performance monitoring (perf, etc.), Advanced network performance monitoring (nagios, etc.), Advanced log management (syslog-ng, etc.), Advanced incident response (tripwire, etc.)
+-----------------------------------------------------  
+    Security:
+    Beginner: Basic firewall configuration (iptables, etc.), Basic security hardening (permissions, etc.), Basic intrusion detection (log monitoring, etc.)
+    
+    Intermediate: Advanced security hardening (AppArmor, SELinux, etc.), Advanced intrusion detection (Snort, Suricata, etc.), Advanced encryption (LUKS, dm-crypt, etc.), Advanced authentication (Kerberos, RADIUS, etc.)
+    
+    Advanced: Advanced security hardening (AppArmor, SELinux, etc.), Advanced intrusion detection (Snort, Suricata, etc.), Advanced encryption (LUKS, dm-crypt, etc.), Advanced authentication (Kerberos, RADIUS, etc.), Advanced network security (VPN, IPSEC, etc), Advanced incident response and forensic analysis, Advanced penetration testing, Advanced malware analysis.
+-----------------------------------------------------
