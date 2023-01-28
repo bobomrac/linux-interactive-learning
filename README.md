@@ -6,5 +6,5 @@ Mainly focused on system administration tasks since it covers most topics, but a
 
 I appriciate if you want to contribute to make this an excellent tool!
 
-TO DO:
-Add chapters to every difficulty.
+Update log:
+Sourcing files for each topic on each difficulty - 01/28/2023
