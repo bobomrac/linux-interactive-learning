@@ -1,12 +1,12 @@
-    Terminal Navigation: Beginner level (basic terminal commands, basic text editing)
+    DONE Terminal Navigation: Beginner level (basic terminal commands)
 
-    File Management: Beginner level (creating and deleting files and directories)
+    DONE File Management: Beginner level (creating and deleting files and directories and basic text editing)
 
-    Package Management: Beginner level (installing and updating software, managing package dependencies)
-
+    DONE Package Management: Beginner level (installing and updating software, managing package dependencies)
+    
+    User Management: Beginner level (add/delete users and groups, managing user permissions)
+    
     System Configuration: Beginner level (configuring storage and system resources, configuring system startup)
-
-    User Management: Beginner level (managing users and groups, managing user permissions)
 
     Network Configuration: Beginner level (configuring network interfaces and routes, basic network troubleshooting)
 
@@ -14,9 +14,9 @@
 
     Security: Beginner level (basic firewall configuration, basic security hardening, basic intrusion detection)
 
-    Terminal Navigation: Intermediate level (Bash scripting, regular expressions, command line utilities)
+    Terminal Navigation: Intermediate level (bash scripting, regular expressions)
 
-    File Management: Intermediate level (file compression and archiving, file search and syncing, file system maintenance)
+    File Management: Intermediate level (basic text editing and operators, file compression and archiving, file search and syncing, file system maintenance)
 
     Package Management: Intermediate level (managing package repositories, package versioning and rollback, package virtualization)
 
@@ -30,7 +30,7 @@
 
     Security: Intermediate level (advanced security hardening, advanced intrusion detection, advanced encryption)
 
-    Terminal Navigation: Advanced level (advanced Bash scripting, advanced text processing)
+    Terminal Navigation: Advanced level (bash scripting and regular expressions)
 
     File Management: Advanced level (advanced file system management and performance tuning, advanced file system backup and recovery, file system encryption)
 
@@ -48,18 +48,18 @@
     
 -----------------------------------------------------
         Terminal Navigation:
-    Beginner: Basic terminal commands (ls, cd, pwd, etc.), Basic text editing (nano, vi, etc.)
+    DONE Beginner: Basic terminal navigation commands (ls, cd, pwd, etc.)
     
-    Intermediate: Bash scripting, Regular expressions, Wildcards, Command line utilities, Pipes and redirection
+    ONGOING Intermediate: Wildcards, Regular expressions, Pipes and redirection, Bash scripting
     
     Advanced: Advanced Bash scripting (functions, arrays, etc.), Advanced command line utilities (sed, awk, etc.), Advanced regular expressions (grep, etc.), Advanced text processing (sed, awk, etc.)
 -----------------------------------------------------
     File Management:
-    Beginner: Creating and deleting files and directories (touch, mkdir, rm, etc.),
+    DONE Beginner: Creating and deleting files and directories (touch, mkdir, rm, etc.), Basic text editing (nano, vi, etc.)
     
     Intermediate: File compression and archiving (tar, gzip, etc.), File search (find, grep, etc.), File syncing and backup (rsync, etc.), File system maintenance (fsck, etc.)
     
-    Advanced: Advanced file system management (xfs, btrfs, etc.), Advanced file system performance tuning, Advanced file system backup and recovery, File system encryption
+    Advanced: Advanced file system management (xfs, btrfs, etc.), Advanced file system backup and recovery, File system encryption
 -----------------------------------------------------
     User Management:
     Beginner: Managing users (useradd, userdel, etc.), Managing groups (groupadd, groupmod, etc.), Managing user permissions (sudo, chmod, chown etc.)
@@ -69,7 +69,7 @@
     Advanced: Advanced user and group management (LDAP, etc.), Advanced user authentication (SSH, etc.), Advanced user environment management (bash, etc.)
 -----------------------------------------------------
     Package Management:
-    Beginner: Installing and updating software (apt, yum, etc.), Removing software (apt, yum, etc.), Managing package dependencies (apt, yum, etc.)
+    DONE Beginner: Installing and updating software (apt, yum, etc.), Removing software (apt, yum, etc.), Managing package dependencies (apt, yum, etc.)
     
     Intermediate: Package management from source, Managing package repositories, Package versioning and rollback, Package virtualization
     
