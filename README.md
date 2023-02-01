@@ -12,6 +12,10 @@ Update log:
 <br/>
 <br/>
 Source files for each topic on each difficulty - 01/28/2023
+<br/>
 DONE Terminal Navigation: Beginner level (basic terminal commands)
+<br/>
 DONE File Management: Beginner level (creating deleting files and directories, basic text editing)
+<br/>
 DONE Package Management: Beginner level (installing and updating software, managing package dependencies)
+<br/>
