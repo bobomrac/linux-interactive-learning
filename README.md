@@ -10,12 +10,11 @@ I appriciate if you want to contribute to make this an excellent tool!
 
 Update log:
 <br/>
-<br/>
 Source files for each topic on each difficulty - 01/28/2023
 <br/>
-DONE Terminal Navigation: Beginner level (basic terminal commands)
+DONE Terminal Navigation: Beginner level (basic terminal navigation)
 <br/>
-DONE File Management: Beginner level (creating deleting files and directories, basic text editing)
+DONE File Management: Beginner level (create,copy,move,delete files and directories, basic text editing in vi)
 <br/>
-DONE Package Management: Beginner level (installing and updating software, managing package dependencies)
+DONE Package Management: Beginner level (install, update and remove packages)
 <br/>
