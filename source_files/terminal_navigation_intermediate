@@ -1,0 +1,83 @@
+#!/bin/bash
+clear
+cd ~
+echo "Terminal Navigation - Intermediate"
+echo "In this guide we are going to dive a bit deeper by learning how to use 'Wildcards, Regular expressions, Pipes and redirection and Bash scripting'."
+echo ""
+echo "CHAPTER 1: WILDCARDS"
+echo "Wildcards are characters in terminal commands used to match and select text, such as filenames, based on patterns."
+echo "First let's start by creating some files. Use the command 'touch james mary robert patricia john jennifer'."
+echo ""
+read -p "Enter command: "
+eval "touch james mary robert patricia john jennifer"
+echo ""
+echo "Metacharacters is a way to work more efficiently."
+echo "Some of the most useful metacharacters are *, ? and [...]"
+echo "You will soon understand how they work when we use them. Use the command 'ls j*'."
+echo ""
+read -p "Enter command: "
+eval "ls j*"
+echo ""
+echo "As you can see the command lists everything starting with 'j' followed by anything after."
+echo ""
+echo "Use the command 'ls p*a'."
+echo ""
+read -p "Enter command: "
+eval "ls p*a"
+echo ""
+echo "As you may understand the * matches ANY number of characters."
+echo "Now let's use the ? operator. Use the command 'ls ???y'."
+echo ""
+read -p "Enter command: "
+eval "ls ???y"
+echo ""
+echo "You can see that the ? matches any ONE number."
+echo ""
+echo "Now try 'ls j???i*'."
+echo ""
+read -p "Enter command: "
+eval "ls j???i*"
+echo ""
+echo "This command matches any file that begins with j and has i as its fifth character."
+echo ""
+echo "Lastly use the command 'ls [jmrp]*'."
+echo ""
+read -p "Enter command: "
+eval "ls [jmrp]*"
+echo ""
+echo "This command matches any file that begins with any of the characters inside the brackets([...]), followed by any number of characters (*)."
+echo "Now use the command 'ls [jmrp]*[nat]'."
+echo ""
+read -p "Enter command: "
+eval "ls [jmrp]*[nat]"
+echo ""
+echo "As you may noticed james, mary and jennifer didn't get listed. That because this command lists anything that starts with j,m,r,p and ends with n,a,t."
+echo ""
+echo "Congratulations you have now learned about metacharacters!"
+echo "Now let's delete the files we created so our system does not get bloated. Use the command 'rm james mary robert patricia john jennifer'."
+echo ""
+read -p "Enter comman: "
+eval "rm james mary robert patricia john jennifer"
+echo ""
+echo "Great! We are now done with this chapter!"
+read -p "Press enter to go to the next chapter."
+#-------------------------------------------------
+clear
+echo "CHAPTER 2: REGULAR EXPRESSIONS"
+echo "Regular expressions build on the concept of wildcards, but offer much more expressive power."
+
+
+#-------------------------------------------------
+clear
+echo "CHAPTER 3: PIPES AND REDIRECTION"
+echo "Pipes allow you to pass the output of one command as the input to another command, while redirection allows you to redirect input or output to and from files."
+
+
+#------------------------------------------------
+clear
+echo "CHAPTER 4: BASH SCRIPTING"
+echo "A bash script is a series of terminal commands that are executed in order, allowing you to automate complex tasks with just a few lines of code."
+
+
+
+

@@ -1,9 +1,10 @@
 #!/bin/bash
-    cd ~
     clear
+    cd 
     echo "File Management - Beginner level selected."
-    echo "This level will guide you through basic file management."
+    echo "This guide we will learn about creating and deleting files and directories and basic text editing"
     echo ""
+    echo "CHAPTER 1: CREATING AND DELETING FILES AND DIRECTORIES"
     echo "Step 1: First let's see where we are. Use the 'pwd' command."
     echo ""
     read -p "Enter command: "
@@ -79,7 +80,49 @@
     echo ""
     echo "This is a safer way to use the 'rm' command, at least it gives you a second thought."
     echo ""
-    echo "CONGRATULATIONS! This was everything for the beginner level of File Management. See you in the next chapter!"
+    echo "CONGRATULATIONS! You have now learned about basic file management!"
     echo ""
+    read -p "Press enter to go to the next chapter."
+    #-------------------------------------------
+    clear
+    echo "CHAPTER 2: BASIC TEXT EDITING"
+    echo "Let's create a file named 'mytextfile'. Use the command 'touch mytextfile'."
+    echo ""
+    read -p "Enter command: "
+    eval "touch mytextfile"
+    echo ""
+    echo "Great! But how do we open or edit this file? To do this we are going to use a text editor."
+    echo "There are many different text editors out there for example nano, vi, emacs, vim etc."
+    echo "These are all text editors used inside the terminal. Most linux systems use 'vi' as their default text editor."
+    echo ""
+    echo "Now open a new terminal so you can follow this guide alongside the editor."
+    echo "In the new terminal window use the command 'vi mytextfile'."
+    read -p "Press enter to continue"
+    echo ""
+    echo "Write 'This is my text file.' and save by pressing the Esc-key and type ':w' followed by pressing Enter."
+    read -p "Press enter to continue"
+    echo ""
+    echo "Now add 'I love Linux' and press the Esc-key and instead type ':q!' followed by pressing Enter."
+    read -p "Press enter to continue"
+    echo ""
+    echo "As you noticed the ':q!' command exited the editor."
+    echo "Now close the other terminal window."
+    read -p "Press enter to continue"
+    echo ""
+    echo "To display the contents of files we use the 'cat' command which stands for concatenate. Now use the command 'cat mytextfile'."
+    echo ""
+    read -p "Enter command: "
+    eval "cat mytextfile"
+    echo ""
+    echo "As you can see 'I love linux' is missing. What happened?"
+    echo "When we press the Esc-key inside the vi editor it switches from editing mode to command mode."
+    echo "The command ':w' is equal to save and the command ':q' means quit, however the '!' after the ':q' means force quit."
+    echo "So when we typed ':w' we saved the first part 'This is my text file.' but after we added 'I love linux' we force quit the editor without saving. To save and quit we can combine the commands into ':wq' this would have saved the changes before we quit."
+    echo ""
+    echo "Congratulations! You have now learned basic text editing!"
     read -p "Press enter to go back to the main menu."
     show_main_menu
+    
+    
+    
+    
