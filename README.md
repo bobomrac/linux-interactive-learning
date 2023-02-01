@@ -10,6 +10,7 @@ I appriciate if you want to contribute to make this an excellent tool!
 
 Update log:
 <br/>
+<br/>
 Source files for each topic on each difficulty - 01/28/2023
 DONE Terminal Navigation: Beginner level (basic terminal commands)
 DONE File Management: Beginner level (creating deleting files and directories, basic text editing)
