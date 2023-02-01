@@ -6,7 +6,13 @@ Mainly focused on system administration tasks since it covers most topics, but a
 
 I appriciate if you want to contribute to make this an excellent tool!
 
-
+How to use:
+<br/>
+1. Download the files.
+<br/>
+2. Locate the folder, right-click 'main.sh', click properties and make it executeable.
+<br/>
+3. Double click main.sh to run the program.
 
 Update log:
 <br/>
