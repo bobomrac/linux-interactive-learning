@@ -4,7 +4,7 @@
 
     DONE Package Management: Beginner level (installing and updating software, managing package dependencies)
     
-    User Management: Beginner level (add/delete users and groups, managing user permissions)
+    DONE User Management: Beginner level (add/delete users and groups, managing user permissions)
     
     System Configuration: Beginner level (configuring storage and system resources, configuring system startup)
 
