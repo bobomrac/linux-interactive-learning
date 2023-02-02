@@ -15,10 +15,10 @@ Update log:
 <br/>
 Source files for each topic on each difficulty - 01/28/2023
 <br/>
-DONE Terminal Navigation: Beginner (basic terminal navigation) - 01/02/2023
+Terminal Navigation: Beginner (basic terminal navigation) - 01/02/2023
 <br/>
-DONE File Management: Beginner (create,copy,move,delete files and directories, basic text editing in vi) - 01/02/2023
+File Management: Beginner (create,copy,move,delete files and directories, basic text editing in vi) - 01/02/2023
 <br/>
-DONE Package Management: Beginner (install, update and remove packages) - 01/02/2023
+Package Management: Beginner (install, update and remove packages) - 01/02/2023
 <br/>
-DONE User Management: Beginner (user-, permission- and group management) - 02/02/2023
+User Management: Beginner (user-, permission- and group management) - 02/02/2023
