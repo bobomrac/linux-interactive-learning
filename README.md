@@ -13,7 +13,7 @@ How to use:
 
 Update log:
 <br/>
-Source files for each topic on each difficulty - 01/28/2023
+User Management: Beginner (user-, permission- and group management) - 02/02/2023
 <br/>
 Terminal Navigation: Beginner (basic terminal navigation) - 01/02/2023
 <br/>
@@ -21,4 +21,5 @@ File Management: Beginner (create,copy,move,delete files and directories, basic 
 <br/>
 Package Management: Beginner (install, update and remove packages) - 01/02/2023
 <br/>
-User Management: Beginner (user-, permission- and group management) - 02/02/2023
+Source files for each topic on each difficulty - 01/28/2023
+<br/>
