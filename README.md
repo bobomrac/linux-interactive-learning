@@ -21,4 +21,4 @@ DONE File Management: Beginner (create,copy,move,delete files and directories, b
 <br/>
 DONE Package Management: Beginner (install, update and remove packages) - 01/02/2023
 <br/>
-DONE User Management: Beginner (user-, permission- and group management)
+DONE User Management: Beginner (user-, permission- and group management) - 02/02/2023
