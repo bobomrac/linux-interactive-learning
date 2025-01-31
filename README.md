@@ -9,9 +9,11 @@ I appriciate if you want to contribute to make this an excellent tool!
 How to use:
 1. Download the files.
 2. Locate the folder, right-click 'main.sh', click properties and make it executeable.
-3. Double click main.sh to run the program.
+3. Double click main.sh
 
 Update log:
+<br/>
+Updated all Beginner- and Intermediate-level content - 01/02/2025
 <br/>
 User Management: Beginner (user-, permission- and group management) - 02/02/2023
 <br/>
