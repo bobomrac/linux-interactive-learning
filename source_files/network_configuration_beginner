@@ -1,8 +1,0 @@
-#!/bin/bash
-clear
-echo "Network Configuration - Beginner"
-echo "This level will guide you through basic network configuration."
-echo ""
-echo "configuring network interfaces and routes, basic network troubleshooting"
-read -p "Press enter to go back to the main menu."
-show_main_menu

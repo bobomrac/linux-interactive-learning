@@ -1,8 +1,0 @@
-#!/bin/bash
-clear
-echo "System Configuration - Beginner"
-echo "This level will guide you through basic system configuration."
-echo ""
-echo "configuring storage and system resources, configuring system startup"
-read -p "Press enter to go back to the main menu."
-show_main_menu
