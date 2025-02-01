@@ -1,0 +1,158 @@
+#!/bin/bash
+clear
+cd ~
+echo "=== Terminal Navigation - Beginner Level ==="
+echo "This guide will teach you the basics of navigating the Linux terminal, including changing directories, listing files, and understanding file permissions."
+echo ""
+
+# CHAPTER 1: BASIC NAVIGATION
+echo "=== CHAPTER 1: BASIC NAVIGATION ==="
+echo "Let's start by learning how to navigate the file system using the terminal."
+echo ""
+
+# Step 1: Check the current directory
+echo "Step 1: Check the current directory."
+echo "Use the 'pwd' command to print the current working directory."
+echo "'pwd' stands for 'print working directory' and shows the full path of the directory you're currently in."
+echo ""
+read -p "Write the command & press Enter: "
+eval "pwd"
+echo ""
+echo "You are currently in your home directory, which is usually '/home/USERNAME'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: List files and directories
+echo "Step 2: List files and directories."
+echo "Use the 'ls' command to list the contents of the current directory."
+echo "'ls' stands for 'list' and shows the files and directories in the current folder."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls"
+echo ""
+echo "This command displays the files and directories in your current location."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Change to the Desktop directory
+echo "Step 3: Change to the 'Desktop' directory."
+echo "Use the 'cd' command to change directories. For example, to go to the 'Desktop' directory, use: 'cd Desktop'."
+echo "'cd' stands for 'change directory' and allows you to move to a different folder."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cd Desktop"
+echo ""
+echo "You are now in the 'Desktop' directory. You can verify this by running 'pwd' again."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Return to the home directory
+echo "Step 4: Return to the home directory."
+echo "There are several ways to return to your home directory:"
+echo "1. 'cd ..' - Moves up one directory level."
+echo "2. 'cd /home/USERNAME/' - Specifies the absolute path to your home directory."
+echo "3. 'cd ~' - Always takes you to your home directory, no matter where you are."
+echo ""
+echo "Let's use 'cd ~' to return to the home directory."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cd ~"
+echo ""
+echo "You are now back in your home directory."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: LISTING FILES WITH OPTIONS
+clear
+echo "=== CHAPTER 2: LISTING FILES WITH OPTIONS ==="
+echo "Now let's explore some advanced options for the 'ls' command."
+echo ""
+
+# Step 5: List hidden files
+echo "Step 5: List hidden files."
+echo "Use the 'ls -a' command to list all files, including hidden ones."
+echo "Hidden files in Linux start with a dot (.), such as '.bashrc'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls -a"
+echo ""
+echo "You should now see hidden files in the output. These are often configuration files."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 6: List files with detailed information
+echo "Step 6: List files with detailed information."
+echo "Use the 'ls -l' command to list files with detailed information, such as permissions, ownership, size, and modification date."
+echo "You can combine options like '-la' to show hidden files with detailed information."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls -la"
+echo ""
+echo "The output includes:"
+echo "1. File permissions."
+echo "2. Number of links."
+echo "3. Owner and group."
+echo "4. File size."
+echo "5. Last modification date and time."
+echo "6. File or directory name."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: UNDERSTANDING FILE PERMISSIONS
+clear
+echo "=== CHAPTER 3: UNDERSTANDING FILE PERMISSIONS ==="
+echo "Now let's learn how to interpret file permissions in the 'ls -l' output."
+echo ""
+
+# Step 7: Interpret file permissions
+echo "Step 7: Interpret file permissions."
+echo "The first column in the 'ls -l' output shows file permissions. For example:"
+echo "-rw-r--r--"
+echo "This can be broken down as follows:"
+echo "1. The first character indicates the file type ('-' for a regular file, 'd' for a directory)."
+echo "2. The next three characters ('rw-') show the owner's permissions (read, write, execute)."
+echo "3. The next three characters ('r--') show the group's permissions."
+echo "4. The last three characters ('r--') show permissions for others."
+echo ""
+echo "Let's run 'ls -l' again to see the permissions."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls -l"
+echo ""
+echo "Take a moment to analyze the permissions for each file and directory."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 4: USING THE MANUAL PAGES
+clear
+echo "=== CHAPTER 4: USING THE MANUAL PAGES ==="
+echo "Linux provides manual pages (man pages) for almost every command, which you can use to learn more about a command's options and usage."
+echo ""
+
+# Step 8: View the manual for 'ls'
+echo "Step 8: View the manual for 'ls'."
+echo "Use the 'man' command to view the manual page for a command. For example, to view the manual for 'ls', use: 'man ls'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "man ls"
+echo ""
+echo "The manual page provides detailed information about the 'ls' command, including all available options."
+echo "Press 'q' to exit the manual page."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the beginner level of terminal navigation!"
+echo "You've learned how to navigate the file system, list files with different options, interpret file permissions, and use manual pages."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

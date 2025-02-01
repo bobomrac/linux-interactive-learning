@@ -1,0 +1,177 @@
+#!/bin/bash
+clear
+echo "=== User Management - Intermediate Level ==="
+echo "This guide will teach you advanced user management techniques, including advanced user and group management, user authentication, and quota management."
+echo ""
+
+# CHAPTER 1: ADVANCED USER AND GROUP MANAGEMENT
+echo "=== CHAPTER 1: ADVANCED USER AND GROUP MANAGEMENT ==="
+echo "Let's start by learning advanced techniques for managing users and groups."
+echo ""
+
+# Step 1: Create a user with a specific home directory
+echo "Step 1: Create a user with a specific home directory."
+echo "You can create a user with a custom home directory using the '--home' option."
+echo "Run the command: 'sudo useradd -m -d /home/custom_user custom_user'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo useradd -m -d /home/custom_user custom_user"
+echo ""
+echo "The user 'custom_user' has been created with a custom home directory at '/home/custom_user'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Set a password for the new user
+echo "Step 2: Set a password for the new user."
+echo "Use the 'passwd' command to set a password for 'custom_user'."
+echo "Run the command: 'sudo passwd custom_user'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo passwd custom_user"
+echo ""
+echo "A password has been set for 'custom_user'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Create a group and add multiple users
+echo "Step 3: Create a group and add multiple users."
+echo "Let's create a group named 'developers' and add multiple users to it."
+echo "Run the following commands:"
+echo "'sudo groupadd developers'"
+echo "'sudo useradd -m -G developers dev1'"
+echo "'sudo useradd -m -G developers dev2'"
+echo ""
+read -p "Write the commands & press Enter: "
+eval "sudo groupadd developers"
+eval "sudo useradd -m -G developers dev1"
+eval "sudo useradd -m -G developers dev2"
+echo ""
+echo "The group 'developers' has been created, and 'dev1' and 'dev2' have been added to it."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Verify group membership
+echo "Step 4: Verify group membership."
+echo "Use the 'groups' command to check which groups a user belongs to."
+echo "Run the command: 'groups dev1'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "groups dev1"
+echo ""
+echo "You should see 'developers' listed in the output."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: USER AUTHENTICATION
+clear
+echo "=== CHAPTER 2: USER AUTHENTICATION ==="
+echo "Now let's learn how to manage user authentication, including SSH key-based authentication."
+echo ""
+
+# Step 5: Generate SSH keys
+echo "Step 5: Generate SSH keys."
+echo "SSH keys provide a more secure way to authenticate users. Let's generate an SSH key pair for 'custom_user'."
+echo "Run the command: 'sudo -u custom_user ssh-keygen -t rsa -b 4096 -f /home/custom_user/.ssh/id_rsa'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo -u custom_user ssh-keygen -t rsa -b 4096 -f /home/custom_user/.ssh/id_rsa"
+echo ""
+echo "An SSH key pair has been generated for 'custom_user'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 6: Set up SSH key-based authentication
+echo "Step 6: Set up SSH key-based authentication."
+echo "To enable SSH key-based authentication, copy the public key to the authorized_keys file."
+echo "Run the command: 'sudo -u custom_user cp /home/custom_user/.ssh/id_rsa.pub /home/custom_user/.ssh/authorized_keys'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo -u custom_user cp /home/custom_user/.ssh/id_rsa.pub /home/custom_user/.ssh/authorized_keys"
+echo ""
+echo "SSH key-based authentication has been set up for 'custom_user'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: QUOTA MANAGEMENT
+clear
+echo "=== CHAPTER 3: QUOTA MANAGEMENT ==="
+echo "Now let's learn how to manage disk quotas for users and groups."
+echo ""
+
+# Step 7: Install quota tools
+echo "Step 7: Install quota tools."
+echo "To manage disk quotas, you need to install the quota tools."
+echo "Run the following commands:"
+echo "For Debian-based systems: 'sudo apt install quota'."
+echo "For Red Hat-based systems: 'sudo dnf install quota'."
+echo ""
+read -p "Write the commands for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install quota"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf install quota"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The quota tools have been installed."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 8: Enable quotas on a filesystem
+echo "Step 8: Enable quotas on a filesystem."
+echo "To enable quotas, you need to edit the filesystem's mount options in '/etc/fstab'."
+echo "Add 'usrquota,grpquota' to the options for the desired filesystem."
+echo "For example, edit '/etc/fstab' and add 'usrquota,grpquota' to the options for '/home'."
+echo ""
+read -p "Press Enter to continue after making the changes: "
+echo ""
+echo "Quotas have been enabled on the filesystem."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 9: Set user quotas
+echo "Step 9: Set user quotas."
+echo "Use the 'setquota' command to set disk quotas for a user."
+echo "Run the command: 'sudo setquota -u custom_user 100M 200M 0 0 /home'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo setquota -u custom_user 100M 200M 0 0 /home"
+echo ""
+echo "A quota of 100MB (soft limit) and 200MB (hard limit) has been set for 'custom_user' on the '/home' filesystem."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 10: Check quota usage
+echo "Step 10: Check quota usage."
+echo "Use the 'quota' command to check disk usage and quotas for a user."
+echo "Run the command: 'sudo quota -u custom_user'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo quota -u custom_user"
+echo ""
+echo "This command shows the disk usage and quotas for 'custom_user'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the intermediate level of user management!"
+echo "You've learned advanced user and group management, user authentication, and quota management techniques."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

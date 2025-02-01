@@ -1,0 +1,187 @@
+#!/bin/bash
+clear
+cd
+echo "=== File Management - Beginner Level ==="
+echo "This guide will teach you how to create, delete, and manage files and directories, as well as perform basic text editing."
+echo ""
+
+# CHAPTER 1: CREATING AND DELETING FILES AND DIRECTORIES
+echo "=== CHAPTER 1: CREATING AND DELETING FILES AND DIRECTORIES ==="
+echo "Let's start by learning how to create and manage files and directories."
+echo ""
+
+# Step 1: Check current directory
+echo "Step 1: Let's see where we are in the file system. Use the 'pwd' command to print the current working directory."
+echo ""
+read -p "Write the command & press Enter: "
+eval "pwd"
+echo ""
+echo "Great! This is your current directory. All commands you run will be relative to this location unless you change it."
+echo ""
+
+# Step 2: Create a new file
+echo "Step 2: Now let's create a new file named 'my_file'. Use the 'touch' command: 'touch my_file'."
+echo "The 'touch' command is used to create empty files or update the timestamp of existing files."
+echo ""
+read -p "Write the command & press Enter: "
+eval "touch my_file"
+echo ""
+echo "File 'my_file' has been created!"
+echo ""
+
+# Step 3: List files in the directory
+echo "Step 3: Let's confirm that the file was created. Use the 'ls' command to list the contents of the current directory."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls"
+echo ""
+echo "You should see 'my_file' listed here. If you do, you've successfully created a file!"
+echo ""
+
+# Step 4: Copy a file
+echo "Step 4: Now let's learn how to copy files. Use the 'cp' command to copy 'my_file' to a new file named 'my_file2': 'cp my_file my_file2'."
+echo "The 'cp' command copies a file from the source (first argument) to the destination (second argument)."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cp my_file my_file2"
+echo ""
+echo "File 'my_file' has been copied to 'my_file2'."
+echo ""
+
+# Step 5: Confirm the copy
+echo "Step 5: Let's confirm the copy by listing the files again using 'ls'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls"
+echo ""
+echo "You should now see both 'my_file' and 'my_file2' in the list."
+echo ""
+
+# Step 6: Create a directory
+echo "Step 6: Now let's create a directory. Use the 'mkdir' command to create a directory named 'my_dir': 'mkdir my_dir'."
+echo "The 'mkdir' command stands for 'make directory' and is used to create new directories."
+echo ""
+read -p "Write the command & press Enter: "
+eval "mkdir my_dir"
+echo ""
+echo "Directory 'my_dir' has been created!"
+echo ""
+
+# Step 7: Move a file into a directory
+echo "Step 7: Let's move 'my_file2' into the 'my_dir' directory. Use the 'mv' command: 'mv my_file2 my_dir/'."
+echo "The 'mv' command moves files or directories. The '/' at the end of 'my_dir/' tells the terminal that it's a directory."
+echo ""
+read -p "Write the command & press Enter: "
+eval "mv my_file2 my_dir/"
+echo ""
+echo "File 'my_file2' has been moved into 'my_dir'."
+echo ""
+
+# Step 8: Navigate into the directory
+echo "Step 8: Let's go into the 'my_dir' directory and confirm that the file is there. Use 'cd my_dir' to change directory, then 'ls' to list the contents."
+echo ""
+read -p "Write the first command & press Enter: "
+eval "cd my_dir"
+echo ""
+read -p "Write the second command & press Enter: "
+eval "ls"
+echo ""
+echo "You should see 'my_file2' inside the directory. Great job!"
+echo ""
+
+# Step 9: Go back to the parent directory
+echo "Step 9: Now let's go back to the parent directory using 'cd ..'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cd .."
+echo ""
+echo "You're now back in the parent directory."
+echo ""
+
+# Step 10: Remove a directory
+echo "Step 10: Let's try to remove the 'my_dir' directory using 'rmdir my_dir'."
+echo "The 'rmdir' command removes empty directories."
+echo ""
+read -p "Write the command & press Enter: "
+eval "rmdir my_dir"
+echo ""
+echo "Oops! The directory is not empty, so 'rmdir' failed. To remove a directory and its contents, use 'rm -r my_dir'."
+echo "The '-r' option stands for 'recursive', which means it will remove the directory and everything inside it."
+echo ""
+read -p "Write the command & press Enter: "
+eval "rm -r my_dir"
+echo ""
+echo "Directory 'my_dir' and its contents have been removed."
+echo ""
+
+# Step 11: Safe file removal
+echo "Step 11: Now let's remove 'my_file' using the 'rm' command. To be safe, use the '-i' option: 'rm -i my_file'."
+echo "The '-i' option prompts you before deleting the file, giving you a chance to confirm."
+echo ""
+read -p "Write the command & press Enter: "
+eval "rm -i my_file"
+echo ""
+echo "File 'my_file' has been removed. Always be careful with the 'rm' command, as it permanently deletes files!"
+echo ""
+
+# CHAPTER 2: BASIC TEXT EDITING
+clear
+echo "=== CHAPTER 2: BASIC TEXT EDITING ==="
+echo "Now let's learn how to create and edit text files using a terminal-based text editor."
+echo ""
+
+# Step 1: Create a text file
+echo "Step 1: Let's create a new text file named 'mytextfile'. Use the 'touch' command: 'touch mytextfile'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "touch mytextfile"
+echo ""
+echo "File 'mytextfile' has been created!"
+echo ""
+
+# Step 2: Open the file in a text editor
+echo "Step 2: Now let's open the file in a text editor. We'll use 'vi', a common terminal-based text editor."
+echo "Open a new terminal window and run the command 'vi mytextfile'."
+echo "In the editor, type 'This is my text file.' and save it by pressing Esc, then typing ':w' and pressing Enter."
+echo ""
+read -p "Press Enter to continue after you've saved the file: "
+echo ""
+
+# Step 3: Edit the file and force quit
+echo "Step 3: Now add 'I love Linux' to the file, but this time, force quit without saving by pressing Esc, then typing ':q!' and pressing Enter."
+echo ""
+read -p "Press Enter to continue after you've force quit: "
+echo ""
+
+# Step 4: Display the file contents
+echo "Step 4: Let's check the contents of the file using the 'cat' command: 'cat mytextfile'."
+echo "The 'cat' command displays the contents of a file."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cat mytextfile"
+echo ""
+echo "Notice that 'I love Linux' is missing because we force quit without saving. To save and quit, you can use ':wq' in the editor."
+echo ""
+
+# Step 5: Save and quit properly
+echo "Step 5: Open the file again in 'vi' and add 'I love Linux'. This time, save and quit using ':wq'."
+echo ""
+read -p "Press Enter to continue after you've saved and quit: "
+echo ""
+
+# Step 6: Confirm the changes
+echo "Step 6: Let's confirm the changes by running 'cat mytextfile' again."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cat mytextfile"
+echo ""
+echo "Now you should see both lines in the file. Great job!"
+echo ""
+
+# Conclusion
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the beginner level of file management and basic text editing!"
+echo "You've learned how to create, copy, move, and delete files and directories, as well as how to edit text files using 'vi'."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

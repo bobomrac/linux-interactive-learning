@@ -1,0 +1,161 @@
+#!/bin/bash
+clear
+echo "=== System Configuration - Beginner Level ==="
+echo "This guide will teach you the basics of configuring your Linux system, including storage, system resources, and system startup."
+echo ""
+
+# CHAPTER 1: CONFIGURING STORAGE
+echo "=== CHAPTER 1: CONFIGURING STORAGE ==="
+echo "Let's start by learning how to manage storage on your system."
+echo ""
+
+# Step 1: Check disk usage
+echo "Step 1: Check disk usage."
+echo "Use the 'df' command to display disk space usage for all mounted filesystems."
+echo "Run the command: 'df -h'."
+echo "The '-h' option makes the output human-readable (e.g., in KB, MB, GB)."
+echo ""
+read -p "Write the command & press Enter: "
+eval "df -h"
+echo ""
+echo "This command shows how much disk space is used and available on each filesystem."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Check directory size
+echo "Step 2: Check the size of a specific directory."
+echo "Use the 'du' command to estimate file and directory space usage."
+echo "Run the command: 'du -sh /path/to/directory'."
+echo "The '-s' option summarizes the total size, and '-h' makes it human-readable."
+echo ""
+echo "For example, to check the size of your home directory, use: 'du -sh ~'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "du -sh ~"
+echo ""
+echo "This command shows the total size of the specified directory."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Create a new partition
+echo "Step 3: Create a new partition."
+echo "To create a new partition, use the 'fdisk' or 'parted' command."
+echo "For example, to create a partition on '/dev/sdb', use: 'sudo fdisk /dev/sdb'."
+echo "Follow the on-screen instructions to create a new partition."
+echo ""
+read -p "Press Enter to continue after creating the partition: "
+echo ""
+echo "You've successfully created a new partition!"
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Format the partition
+echo "Step 4: Format the partition."
+echo "After creating a partition, you need to format it with a filesystem."
+echo "For example, to format the partition as ext4, use: 'sudo mkfs.ext4 /dev/sdb1'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo mkfs.ext4 /dev/sdb1"
+echo ""
+echo "The partition is now formatted and ready to use."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 5: Mount the partition
+echo "Step 5: Mount the partition."
+echo "To use the partition, you need to mount it to a directory."
+echo "For example, to mount '/dev/sdb1' to '/mnt/mydata', use: 'sudo mount /dev/sdb1 /mnt/mydata'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo mount /dev/sdb1 /mnt/mydata"
+echo ""
+echo "The partition is now mounted and accessible at '/mnt/mydata'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: CONFIGURING SYSTEM RESOURCES
+clear
+echo "=== CHAPTER 2: CONFIGURING SYSTEM RESOURCES ==="
+echo "Now let's learn how to manage system resources like CPU, memory, and processes."
+echo ""
+
+# Step 6: Monitor system resources
+echo "Step 6: Monitor system resources."
+echo "Use the 'top' command to monitor system resources in real-time."
+echo "Run the command: 'top'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "top"
+echo ""
+echo "The 'top' command shows a dynamic view of system processes, CPU usage, memory usage, and more."
+echo "Press 'q' to exit."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 7: Adjust process priority
+echo "Step 7: Adjust process priority."
+echo "You can adjust the priority of a process using the 'nice' and 'renice' commands."
+echo "For example, to start a process with a lower priority, use: 'nice -n 19 <command>'."
+echo "To change the priority of an existing process, use: 'sudo renice -n 10 -p <PID>'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 8: Manage system services
+echo "Step 8: Manage system services."
+echo "Use the 'systemctl' command to manage system services."
+echo "For example, to check the status of the SSH service, use: 'sudo systemctl status ssh'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo systemctl status ssh"
+echo ""
+echo "You can start, stop, or restart services using 'systemctl start', 'systemctl stop', or 'systemctl restart'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: CONFIGURING SYSTEM STARTUP
+clear
+echo "=== CHAPTER 3: CONFIGURING SYSTEM STARTUP ==="
+echo "Now let's learn how to configure which services start automatically at boot."
+echo ""
+
+# Step 9: Enable a service at startup
+echo "Step 9: Enable a service at startup."
+echo "To enable a service to start automatically at boot, use: 'sudo systemctl enable <service>'."
+echo "For example, to enable the SSH service, use: 'sudo systemctl enable ssh'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo systemctl enable ssh"
+echo ""
+echo "The SSH service will now start automatically at boot."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 10: Disable a service at startup
+echo "Step 10: Disable a service at startup."
+echo "To disable a service from starting at boot, use: 'sudo systemctl disable <service>'."
+echo "For example, to disable the SSH service, use: 'sudo systemctl disable ssh'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo systemctl disable ssh"
+echo ""
+echo "The SSH service will no longer start automatically at boot."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the beginner level of system configuration!"
+echo "You've learned how to manage storage, system resources, and system startup."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

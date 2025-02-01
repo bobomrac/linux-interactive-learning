@@ -1,0 +1,164 @@
+#!/bin/bash
+clear
+echo "=== Basic Security - Beginner Level ==="
+echo "This guide will teach you the basics of securing your Linux system, including firewall configuration, security hardening, and intrusion detection."
+echo ""
+
+# CHAPTER 1: FIREWALL CONFIGURATION
+echo "=== CHAPTER 1: FIREWALL CONFIGURATION ==="
+echo "A firewall is a system that controls incoming and outgoing network traffic based on predefined security rules."
+echo "Let's start by configuring a basic firewall using 'ufw' (Uncomplicated Firewall), which is available on most Linux distributions."
+echo ""
+
+# Step 1: Check if ufw is installed
+echo "Step 1: Check if 'ufw' is installed on your system."
+echo "Run the command: 'sudo ufw status'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo ufw status"
+echo ""
+echo "If 'ufw' is not installed, you can install it using:"
+echo "For Debian-based systems: 'sudo apt install ufw'."
+echo "For Red Hat-based systems: 'sudo dnf install ufw'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Enable the firewall
+echo "Step 2: Enable the firewall."
+echo "Run the command: 'sudo ufw enable'."
+echo "This will activate the firewall and apply the default rules."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo ufw enable"
+echo ""
+echo "The firewall is now active. You can check its status again using 'sudo ufw status'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Allow SSH connections
+echo "Step 3: Allow SSH connections."
+echo "If you're accessing your system remotely, you need to allow SSH traffic."
+echo "Run the command: 'sudo ufw allow ssh'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo ufw allow ssh"
+echo ""
+echo "SSH traffic is now allowed. You can verify this by running 'sudo ufw status'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Allow HTTP/HTTPS traffic
+echo "Step 4: Allow HTTP/HTTPS traffic."
+echo "If you're running a web server, you need to allow HTTP (port 80) and HTTPS (port 443) traffic."
+echo "Run the commands: 'sudo ufw allow http' and 'sudo ufw allow https'."
+echo ""
+read -p "Write the commands & press Enter: "
+eval "sudo ufw allow http"
+eval "sudo ufw allow https"
+echo ""
+echo "HTTP and HTTPS traffic are now allowed. You can verify this by running 'sudo ufw status'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: SECURITY HARDENING
+clear
+echo "=== CHAPTER 2: SECURITY HARDENING ==="
+echo "Security hardening involves configuring your system to reduce its attack surface."
+echo "Let's go through some basic hardening steps."
+echo ""
+
+# Step 5: Disable root login via SSH
+echo "Step 5: Disable root login via SSH."
+echo "Allowing root login via SSH is a security risk. Let's disable it."
+echo "Edit the SSH configuration file: 'sudo nano /etc/ssh/sshd_config'."
+echo "Find the line that says 'PermitRootLogin yes' and change it to 'PermitRootLogin no'."
+echo "Save the file and restart the SSH service: 'sudo systemctl restart ssh'."
+echo ""
+read -p "Press Enter to continue after making the changes: "
+eval "sudo systemctl restart ssh"
+echo ""
+echo "Root login via SSH is now disabled. This reduces the risk of unauthorized access."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 6: Update your system regularly
+echo "Step 6: Update your system regularly."
+echo "Keeping your system up to date is one of the most important security practices."
+echo "Run the following commands to update your system:"
+echo "For Debian-based systems: 'sudo apt update && sudo apt upgrade'."
+echo "For Red Hat-based systems: 'sudo dnf update'."
+echo ""
+read -p "Write the commands for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt update && sudo apt upgrade"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf update"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Your system is now up to date. Regular updates help protect against known vulnerabilities."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: INTRUSION DETECTION
+clear
+echo "=== CHAPTER 3: INTRUSION DETECTION ==="
+echo "Intrusion detection involves monitoring your system for suspicious activity."
+echo "Let's set up a basic intrusion detection system using 'fail2ban'."
+echo ""
+
+# Step 7: Install fail2ban
+echo "Step 7: Install 'fail2ban'."
+echo "Fail2ban scans log files for repeated failed login attempts and bans the offending IP addresses."
+echo "Run the following commands to install fail2ban:"
+echo "For Debian-based systems: 'sudo apt install fail2ban'."
+echo "For Red Hat-based systems: 'sudo dnf install fail2ban'."
+echo ""
+read -p "Write the commands for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install fail2ban"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf install fail2ban"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Fail2ban is now installed. It will automatically start monitoring your system for suspicious activity."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 8: Configure fail2ban
+echo "Step 8: Configure fail2ban."
+echo "You can customize fail2ban by editing its configuration file: 'sudo nano /etc/fail2ban/jail.local'."
+echo "For example, you can adjust the ban time or add additional services to monitor."
+echo ""
+read -p "Press Enter to continue after making any changes: "
+echo ""
+echo "Fail2ban is now configured and actively protecting your system."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the beginner level of basic security!"
+echo "You've learned how to configure a firewall, harden your system, and set up intrusion detection."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

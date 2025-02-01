@@ -1,0 +1,201 @@
+#!/bin/bash
+clear
+cd ~
+echo "=== Terminal Navigation - Intermediate Level ==="
+echo "This guide will teach you advanced terminal navigation techniques, including wildcards, regular expressions, pipes and redirection, and basic Bash scripting."
+echo ""
+
+# CHAPTER 1: WILDCARDS
+echo "=== CHAPTER 1: WILDCARDS ==="
+echo "Wildcards are special characters used to match patterns in filenames and text. They allow you to work more efficiently in the terminal."
+echo ""
+
+# Step 1: Create sample files
+echo "Step 1: Create sample files."
+echo "Let's create some files to practice with wildcards. Run the following command:"
+echo "'touch james mary robert patricia john jennifer'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "touch james mary robert patricia john jennifer"
+echo ""
+echo "Six files have been created: james, mary, robert, patricia, john, and jennifer."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Use the * wildcard
+echo "Step 2: Use the * wildcard."
+echo "The * wildcard matches any number of characters. Let's list all files starting with 'j'."
+echo "Run the command: 'ls j*'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls j*"
+echo ""
+echo "This command lists all files that start with 'j' followed by any number of characters."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Use the ? wildcard
+echo "Step 3: Use the ? wildcard."
+echo "The ? wildcard matches exactly one character. Let's list files with exactly four characters ending with 'y'."
+echo "Run the command: 'ls ???y'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls ???y"
+echo ""
+echo "This command lists files with exactly four characters, where the last character is 'y'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Use the [...] wildcard
+echo "Step 4: Use the [...] wildcard."
+echo "The [...] wildcard matches any single character within the brackets. Let's list files starting with 'j', 'm', 'r', or 'p'."
+echo "Run the command: 'ls [jmrp]*'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls [jmrp]*"
+echo ""
+echo "This command lists files that start with 'j', 'm', 'r', or 'p'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 5: Combine wildcards
+echo "Step 5: Combine wildcards."
+echo "You can combine wildcards to create more complex patterns. Let's list files starting with 'j', 'm', 'r', or 'p' and ending with 'n', 'a', or 't'."
+echo "Run the command: 'ls [jmrp]*[nat]'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls [jmrp]*[nat]"
+echo ""
+echo "This command lists files that start with 'j', 'm', 'r', or 'p' and end with 'n', 'a', or 't'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 6: Clean up files
+echo "Step 6: Clean up files."
+echo "Let's delete the files we created to keep the system clean."
+echo "Run the command: 'rm james mary robert patricia john jennifer'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "rm james mary robert patricia john jennifer"
+echo ""
+echo "The files have been deleted."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: REGULAR EXPRESSIONS
+clear
+echo "=== CHAPTER 2: REGULAR EXPRESSIONS ==="
+echo "Regular expressions (regex) are patterns used to match text. They are more powerful than wildcards and are commonly used in commands like 'grep'."
+echo ""
+
+# Step 7: Use grep with regex
+echo "Step 7: Use grep with regex."
+echo "Let's create a file named 'example.txt' and search for patterns using 'grep'."
+echo "Run the following commands:"
+echo "'echo -e 'apple\nbanana\ncherry\ndate\nelderberry\nfig' > example.txt'"
+echo "'grep 'a' example.txt'"
+echo ""
+read -p "Write the commands & press Enter: "
+eval "echo -e 'apple\nbanana\ncherry\ndate\nelderberry\nfig' > example.txt"
+eval "grep 'a' example.txt"
+echo ""
+echo "The 'grep' command searches for lines containing the letter 'a' in 'example.txt'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 8: Use regex with character classes
+echo "Step 8: Use regex with character classes."
+echo "Character classes allow you to match specific sets of characters. Let's search for lines containing vowels."
+echo "Run the command: 'grep '[aeiou]' example.txt'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "grep '[aeiou]' example.txt"
+echo ""
+echo "This command lists lines containing any vowel (a, e, i, o, u)."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 9: Use regex with quantifiers
+echo "Step 9: Use regex with quantifiers."
+echo "Quantifiers specify how many times a character or group of characters should appear. Let's search for lines with double letters."
+echo "Run the command: 'grep '\(.\)\1' example.txt'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "grep '\(.\)\1' example.txt"
+echo ""
+echo "This command lists lines with double letters (e.g., 'apple')."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: PIPES AND REDIRECTION
+clear
+echo "=== CHAPTER 3: PIPES AND REDIRECTION ==="
+echo "Pipes (|) and redirection (>, >>, <) allow you to control the flow of input and output between commands and files."
+echo ""
+
+# Step 10: Use pipes
+echo "Step 10: Use pipes."
+echo "Pipes allow you to pass the output of one command as input to another. Let's count the number of lines in 'example.txt'."
+echo "Run the command: 'cat example.txt | wc -l'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "cat example.txt | wc -l"
+echo ""
+echo "This command counts the number of lines in 'example.txt'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 11: Use redirection
+echo "Step 11: Use redirection."
+echo "Redirection allows you to send output to a file or read input from a file. Let's save the output of 'ls' to a file."
+echo "Run the command: 'ls > file_list.txt'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ls > file_list.txt"
+echo ""
+echo "The output of 'ls' has been saved to 'file_list.txt'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 4: BASIC BASH SCRIPTING
+clear
+echo "=== CHAPTER 4: BASIC BASH SCRIPTING ==="
+echo "Bash scripting allows you to automate tasks by writing scripts that execute a series of commands."
+echo ""
+
+# Step 12: Create a simple Bash script
+echo "Step 12: Create a simple Bash script."
+echo "Let's create a script that lists files and counts them."
+echo "Run the following commands:"
+echo "'echo -e '#!/bin/bash\nls\necho \"Total files: \$(ls | wc -l)\"' > list_files.sh'"
+echo "'chmod +x list_files.sh'"
+echo "'./list_files.sh'"
+echo ""
+read -p "Write the commands & press Enter: "
+eval "echo -e '#!/bin/bash\nls\necho \"Total files: \$(ls | wc -l)\"' > list_files.sh"
+eval "chmod +x list_files.sh"
+eval "./list_files.sh"
+echo ""
+echo "The script lists files in the current directory and counts them."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the intermediate level of terminal navigation!"
+echo "You've learned about wildcards, regular expressions, pipes and redirection, and basic Bash scripting."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

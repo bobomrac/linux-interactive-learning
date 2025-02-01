@@ -1,0 +1,167 @@
+#!/bin/bash
+clear
+echo "=== System Configuration - Intermediate Level ==="
+echo "This guide will teach you advanced system configuration techniques, including advanced disk management, system tuning, and process management."
+echo ""
+
+# CHAPTER 1: ADVANCED DISK MANAGEMENT
+echo "=== CHAPTER 1: ADVANCED DISK MANAGEMENT ==="
+echo "Let's start by learning advanced disk management techniques, such as working with Logical Volume Manager (LVM) and RAID."
+echo ""
+
+# Step 1: Install LVM tools
+echo "Step 1: Install LVM tools."
+echo "LVM (Logical Volume Manager) allows you to manage disk storage more flexibly. Let's install the necessary tools."
+echo "Run the following commands:"
+echo "For Debian-based systems: 'sudo apt install lvm2'."
+echo "For Red Hat-based systems: 'sudo dnf install lvm2'."
+echo ""
+read -p "Write the commands for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install lvm2"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf install lvm2"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "LVM tools are now installed. Let's create a logical volume."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Create a physical volume
+echo "Step 2: Create a physical volume."
+echo "To use LVM, you first need to create a physical volume. Let's create one on '/dev/sdb'."
+echo "Run the command: 'sudo pvcreate /dev/sdb'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo pvcreate /dev/sdb"
+echo ""
+echo "A physical volume has been created on '/dev/sdb'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Create a volume group
+echo "Step 3: Create a volume group."
+echo "Next, create a volume group that will contain the physical volume."
+echo "Run the command: 'sudo vgcreate my_volume_group /dev/sdb'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo vgcreate my_volume_group /dev/sdb"
+echo ""
+echo "A volume group named 'my_volume_group' has been created."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Create a logical volume
+echo "Step 4: Create a logical volume."
+echo "Now, create a logical volume within the volume group."
+echo "Run the command: 'sudo lvcreate -L 10G -n my_logical_volume my_volume_group'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo lvcreate -L 10G -n my_logical_volume my_volume_group"
+echo ""
+echo "A logical volume named 'my_logical_volume' with a size of 10GB has been created."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 5: Format and mount the logical volume
+echo "Step 5: Format and mount the logical volume."
+echo "Format the logical volume with a filesystem and mount it to a directory."
+echo "Run the following commands:"
+echo "'sudo mkfs.ext4 /dev/my_volume_group/my_logical_volume'"
+echo "'sudo mount /dev/my_volume_group/my_logical_volume /mnt/mydata'"
+echo ""
+read -p "Write the commands & press Enter: "
+eval "sudo mkfs.ext4 /dev/my_volume_group/my_logical_volume"
+eval "sudo mount /dev/my_volume_group/my_logical_volume /mnt/mydata"
+echo ""
+echo "The logical volume has been formatted and mounted to '/mnt/mydata'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: SYSTEM TUNING
+clear
+echo "=== CHAPTER 2: SYSTEM TUNING ==="
+echo "Now let's learn how to tune your system for better performance."
+echo ""
+
+# Step 6: Adjust swappiness
+echo "Step 6: Adjust swappiness."
+echo "Swappiness controls how aggressively the system swaps memory to disk. Let's set it to a lower value (e.g., 10)."
+echo "Run the command: 'sudo sysctl vm.swappiness=10'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo sysctl vm.swappiness=10"
+echo ""
+echo "Swappiness has been set to 10. To make this change permanent, add 'vm.swappiness=10' to '/etc/sysctl.conf'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 7: Tune filesystem performance
+echo "Step 7: Tune filesystem performance."
+echo "You can tune filesystem performance using the 'tune2fs' command. Let's adjust the reserved blocks percentage."
+echo "Run the command: 'sudo tune2fs -m 1 /dev/sdb1'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo tune2fs -m 1 /dev/sdb1"
+echo ""
+echo "The reserved blocks percentage has been set to 1%."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: ADVANCED PROCESS MANAGEMENT
+clear
+echo "=== CHAPTER 3: ADVANCED PROCESS MANAGEMENT ==="
+echo "Now let's learn advanced process management techniques, such as managing process priorities and resource limits."
+echo ""
+
+# Step 8: Set process resource limits
+echo "Step 8: Set process resource limits."
+echo "You can set resource limits for processes using the 'ulimit' command. Let's set a limit on the number of open files."
+echo "Run the command: 'ulimit -n 1024'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ulimit -n 1024"
+echo ""
+echo "The maximum number of open files has been set to 1024 for the current session."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 9: Manage process priorities with nice and renice
+echo "Step 9: Manage process priorities with nice and renice."
+echo "You can adjust the priority of a process using the 'nice' and 'renice' commands. Let's lower the priority of a process."
+echo "Run the command: 'nice -n 19 <command>'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "nice -n 19 sleep 100 &"
+echo ""
+echo "The process has been started with a lower priority. Use 'ps -l' to verify."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ps -l"
+echo ""
+echo "You should see the process with a lower priority (higher nice value)."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the intermediate level of system configuration!"
+echo "You've learned advanced disk management, system tuning, and process management techniques."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

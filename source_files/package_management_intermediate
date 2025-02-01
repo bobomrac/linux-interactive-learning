@@ -1,0 +1,211 @@
+#!/bin/bash
+clear
+echo "=== Package Management - Intermediate Level ==="
+echo "This guide will teach you advanced package management techniques, including managing repositories, handling dependencies, and working with package versioning."
+echo ""
+
+# CHAPTER 1: MANAGING PACKAGE REPOSITORIES
+echo "=== CHAPTER 1: MANAGING PACKAGE REPOSITORIES ==="
+echo "Let's start by learning how to manage package repositories, which are collections of software packages."
+echo ""
+
+# Step 1: List enabled repositories
+echo "Step 1: List enabled repositories."
+echo "To see which repositories are enabled on your system, use the following commands:"
+echo "For Debian-based systems: 'sudo apt-cache policy'."
+echo "For Red Hat-based systems: 'sudo dnf repolist'."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt-cache policy"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf repolist"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "This command lists all enabled repositories and their priorities (for Debian-based systems) or status (for Red Hat-based systems)."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Add a new repository
+echo "Step 2: Add a new repository."
+echo "To add a new repository, you need to add its configuration file to your system."
+echo "For Debian-based systems, add a file to '/etc/apt/sources.list.d/'."
+echo "For Red Hat-based systems, add a file to '/etc/yum.repos.d/'."
+echo ""
+echo "Let's add a repository for the 'htop' package on a Debian-based system."
+echo "Run the command: 'sudo add-apt-repository ppa:htop/stable'."
+echo ""
+read -p "Write the command & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo add-apt-repository ppa:htop/stable"
+    else
+        echo "This command is specific to Debian-based systems."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The repository has been added. Update your package list to include the new repository."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Remove a repository
+echo "Step 3: Remove a repository."
+echo "To remove a repository, delete its configuration file or use the appropriate command."
+echo "For Debian-based systems, use: 'sudo add-apt-repository --remove ppa:htop/stable'."
+echo "For Red Hat-based systems, delete the corresponding '.repo' file from '/etc/yum.repos.d/'."
+echo ""
+read -p "Write the command & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo add-apt-repository --remove ppa:htop/stable"
+    else
+        echo "This command is specific to Debian-based systems."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The repository has been removed. Update your package list to reflect the changes."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: HANDLING PACKAGE DEPENDENCIES
+clear
+echo "=== CHAPTER 2: HANDLING PACKAGE DEPENDENCIES ==="
+echo "Now let's learn how to handle package dependencies, which are other packages required by a software package."
+echo ""
+
+# Step 4: View package dependencies
+echo "Step 4: View package dependencies."
+echo "To view the dependencies of a package, use the following commands:"
+echo "For Debian-based systems: 'apt-cache depends <package-name>'."
+echo "For Red Hat-based systems: 'dnf repoquery --requires <package-name>'."
+echo ""
+echo "Let's view the dependencies for the 'htop' package."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "apt-cache depends htop"
+    elif command -v dnf &> /dev/null; then
+        eval "dnf repoquery --requires htop"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "This command lists all dependencies required by the 'htop' package."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 5: Resolve broken dependencies
+echo "Step 5: Resolve broken dependencies."
+echo "If a package installation fails due to broken dependencies, you can fix it using the following commands:"
+echo "For Debian-based systems: 'sudo apt --fix-broken install'."
+echo "For Red Hat-based systems: 'sudo dnf clean all && sudo dnf autoremove'."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt --fix-broken install"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf clean all && sudo dnf autoremove"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "This command resolves broken dependencies and cleans up unused packages."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: WORKING WITH PACKAGE VERSIONING
+clear
+echo "=== CHAPTER 3: WORKING WITH PACKAGE VERSIONING ==="
+echo "Now let's learn how to manage package versions, including installing specific versions and rolling back updates."
+echo ""
+
+# Step 6: Install a specific package version
+echo "Step 6: Install a specific package version."
+echo "To install a specific version of a package, use the following commands:"
+echo "For Debian-based systems: 'sudo apt install <package-name>=<version>'."
+echo "For Red Hat-based systems: 'sudo dnf install <package-name>-<version>'."
+echo ""
+echo "Let's install version 2.2.0 of the 'htop' package on a Debian-based system."
+echo ""
+read -p "Write the command & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install htop=2.2.0"
+    else
+        echo "This command is specific to Debian-based systems."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The specified version of 'htop' has been installed. Verify this using 'htop --version'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "htop --version"
+echo ""
+echo "You should see the installed version of 'htop'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 7: Roll back a package update
+echo "Step 7: Roll back a package update."
+echo "To roll back a package to a previous version, use the following commands:"
+echo "For Debian-based systems: 'sudo apt install <package-name>=<old-version>'."
+echo "For Red Hat-based systems: 'sudo dnf downgrade <package-name>'."
+echo ""
+echo "Let's roll back 'htop' to its previous version."
+echo ""
+read -p "Write the command & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install htop=2.0.2"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf downgrade htop"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The package has been rolled back to its previous version. Verify this using 'htop --version'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "htop --version"
+echo ""
+echo "You should see the previous version of 'htop'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the intermediate level of package management!"
+echo "You've learned how to manage repositories, handle dependencies, and work with package versioning."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

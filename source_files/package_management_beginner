@@ -1,0 +1,198 @@
+#!/bin/bash
+clear
+echo "=== Package Management - Beginner Level ==="
+echo "This guide will teach you how to install, update, and remove software on Linux systems."
+echo "We'll cover both Debian-based (e.g., Ubuntu) and Red Hat-based (e.g., Fedora) distributions."
+echo ""
+
+# CHAPTER 1: INTRODUCTION TO PACKAGE MANAGEMENT
+echo "=== CHAPTER 1: INTRODUCTION TO PACKAGE MANAGEMENT ==="
+echo "In Linux, software is distributed in packages, which are managed by package managers."
+echo "The two main families of Linux distributions are Debian-based and Red Hat-based."
+echo ""
+echo "Debian-based systems (e.g., Ubuntu) use the 'apt' package manager."
+echo "Red Hat-based systems (e.g., Fedora) use the 'dnf' or 'yum' package manager."
+echo ""
+echo "Let's get started by updating your system and learning how to manage packages."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: UPDATING YOUR SYSTEM
+echo "=== CHAPTER 2: UPDATING YOUR SYSTEM ==="
+echo "Before installing or removing software, it's important to ensure your system is up to date."
+echo "This ensures you have the latest security patches and software versions."
+echo ""
+
+# Step 1: Update the package list
+echo "Step 1: Update the package list."
+echo "This step downloads the latest information about available packages from the repositories."
+echo ""
+echo "For Debian-based systems, use: 'sudo apt update'."
+echo "For Red Hat-based systems, use: 'sudo dnf check-update'."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt update"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf check-update"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Great! Your package list is now up to date."
+echo ""
+
+# Step 2: Upgrade installed packages
+echo "Step 2: Upgrade installed packages."
+echo "This step installs the latest versions of all installed packages."
+echo ""
+echo "For Debian-based systems, use: 'sudo apt upgrade'."
+echo "For Red Hat-based systems, use: 'sudo dnf upgrade'."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt upgrade"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf upgrade"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Your system is now fully updated!"
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: SEARCHING FOR PACKAGES
+echo "=== CHAPTER 3: SEARCHING FOR PACKAGES ==="
+echo "You can search for software packages in your distribution's repositories."
+echo "This is useful when you want to find a specific package or check if it's available."
+echo ""
+
+# Step 3: Search for a package
+echo "Step 3: Search for a package."
+echo "For Debian-based systems, use: 'sudo apt search <package-name>'."
+echo "For Red Hat-based systems, use: 'sudo dnf search <package-name>'."
+echo ""
+echo "Let's search for a package. For example, try searching for 'htop', a system monitoring tool."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt search htop"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf search htop"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "You should see a list of packages related to 'htop'. This is how you search for software!"
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 4: INSTALLING PACKAGES
+echo "=== CHAPTER 4: INSTALLING PACKAGES ==="
+echo "Now let's install a package. We'll use 'htop' as an example."
+echo ""
+
+# Step 4: Install a package
+echo "Step 4: Install a package."
+echo "For Debian-based systems, use: 'sudo apt install <package-name>'."
+echo "For Red Hat-based systems, use: 'sudo dnf install <package-name>'."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install htop"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf install htop"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The 'htop' package should now be installed. You can run it by typing 'htop' in the terminal."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 5: REMOVING PACKAGES
+echo "=== CHAPTER 5: REMOVING PACKAGES ==="
+echo "If you no longer need a package, you can remove it to free up space."
+echo ""
+
+# Step 5: Remove a package
+echo "Step 5: Remove a package."
+echo "For Debian-based systems, use: 'sudo apt remove <package-name>'."
+echo "For Red Hat-based systems, use: 'sudo dnf remove <package-name>'."
+echo ""
+echo "Let's remove the 'htop' package we just installed."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt remove htop"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf remove htop"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "The 'htop' package has been removed. You can verify this by trying to run 'htop' in the terminal."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 6: CLEANING UP
+echo "=== CHAPTER 6: CLEANING UP ==="
+echo "After removing packages, you may want to clean up unnecessary files."
+echo ""
+
+# Step 6: Clean up unused dependencies
+echo "Step 6: Clean up unused dependencies."
+echo "For Debian-based systems, use: 'sudo apt autoremove'."
+echo "For Red Hat-based systems, use: 'sudo dnf autoremove'."
+echo ""
+read -p "Write the command for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt autoremove"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf autoremove"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Unused dependencies have been removed. Your system is now clean and efficient!"
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the beginner level of package management!"
+echo "You've learned how to update your system, search for packages, install and remove software, and clean up unused files."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

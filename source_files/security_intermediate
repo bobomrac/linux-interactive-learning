@@ -1,0 +1,166 @@
+#!/bin/bash
+clear
+echo "=== Security - Intermediate Level ==="
+echo "This guide will teach you advanced security techniques, including advanced firewall configuration, security auditing, and advanced intrusion detection."
+echo ""
+
+# CHAPTER 1: ADVANCED FIREWALL CONFIGURATION
+echo "=== CHAPTER 1: ADVANCED FIREWALL CONFIGURATION ==="
+echo "Let's start by learning how to configure advanced firewall rules using 'iptables'."
+echo ""
+
+# Step 1: Check iptables status
+echo "Step 1: Check iptables status."
+echo "The 'iptables' command is a powerful tool for configuring firewall rules. Let's check the current rules."
+echo "Run the command: 'sudo iptables -L -v -n'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo iptables -L -v -n"
+echo ""
+echo "This command lists all active firewall rules with detailed information."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 2: Block specific IP addresses
+echo "Step 2: Block specific IP addresses."
+echo "You can block traffic from specific IP addresses using 'iptables'. Let's block traffic from '192.168.1.100'."
+echo "Run the command: 'sudo iptables -A INPUT -s 192.168.1.100 -j DROP'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo iptables -A INPUT -s 192.168.1.100 -j DROP"
+echo ""
+echo "Traffic from '192.168.1.100' is now blocked. Verify this using 'sudo iptables -L -v -n'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo iptables -L -v -n"
+echo ""
+echo "You should see the new rule blocking traffic from '192.168.1.100'."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 3: Allow traffic on specific ports
+echo "Step 3: Allow traffic on specific ports."
+echo "You can allow traffic on specific ports while blocking everything else. Let's allow traffic on port 8080."
+echo "Run the command: 'sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT"
+echo ""
+echo "Traffic on port 8080 is now allowed. Verify this using 'sudo iptables -L -v -n'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo iptables -L -v -n"
+echo ""
+echo "You should see the new rule allowing traffic on port 8080."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 4: Save iptables rules
+echo "Step 4: Save iptables rules."
+echo "To make your iptables rules persistent across reboots, you need to save them."
+echo "Run the command: 'sudo iptables-save > /etc/iptables/rules.v4'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo iptables-save > /etc/iptables/rules.v4"
+echo ""
+echo "The iptables rules have been saved and will persist after a reboot."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 2: SECURITY AUDITING
+clear
+echo "=== CHAPTER 2: SECURITY AUDITING ==="
+echo "Now let's learn how to perform security audits on your system using tools like 'lynis'."
+echo ""
+
+# Step 5: Install lynis
+echo "Step 5: Install lynis."
+echo "Lynis is a security auditing tool that scans your system for vulnerabilities."
+echo "Run the following commands to install lynis:"
+echo "For Debian-based systems: 'sudo apt install lynis'."
+echo "For Red Hat-based systems: 'sudo dnf install lynis'."
+echo ""
+read -p "Write the commands for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install lynis"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf install lynis"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Lynis is now installed. Let's run a security audit."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 6: Run a security audit
+echo "Step 6: Run a security audit."
+echo "Use the 'lynis audit system' command to perform a security audit."
+echo ""
+read -p "Write the command & press Enter: "
+eval "sudo lynis audit system"
+echo ""
+echo "Lynis will scan your system and provide a report with recommendations for improving security."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CHAPTER 3: ADVANCED INTRUSION DETECTION
+clear
+echo "=== CHAPTER 3: ADVANCED INTRUSION DETECTION ==="
+echo "Now let's learn advanced intrusion detection techniques using tools like 'Snort'."
+echo ""
+
+# Step 7: Install Snort
+echo "Step 7: Install Snort."
+echo "Snort is a powerful intrusion detection system (IDS) that monitors network traffic for suspicious activity."
+echo "Run the following commands to install Snort:"
+echo "For Debian-based systems: 'sudo apt install snort'."
+echo "For Red Hat-based systems: 'sudo dnf install snort'."
+echo ""
+read -p "Write the commands for your system & press Enter: "
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if command -v apt &> /dev/null; then
+        eval "sudo apt install snort"
+    elif command -v dnf &> /dev/null; then
+        eval "sudo dnf install snort"
+    else
+        echo "Unsupported package manager. Please ensure you're using a Debian-based or Red Hat-based system."
+    fi
+else
+    echo "This script is intended for Linux systems only."
+fi
+echo ""
+echo "Snort is now installed. Let's configure it to monitor network traffic."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# Step 8: Configure Snort
+echo "Step 8: Configure Snort."
+echo "Edit the Snort configuration file to define rules and monitoring parameters."
+echo "Run the command: 'sudo nano /etc/snort/snort.conf'."
+echo ""
+read -p "Press Enter to continue after making the changes: "
+echo ""
+echo "Snort is now configured and ready to monitor your network for suspicious activity."
+echo ""
+read -p "Press Enter to continue."
+echo ""
+
+# CONCLUSION
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the intermediate level of security!"
+echo "You've learned advanced firewall configuration, security auditing, and advanced intrusion detection techniques."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu

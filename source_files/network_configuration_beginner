@@ -1,0 +1,117 @@
+#!/bin/bash
+clear
+echo "=== Network Configuration - Beginner Level ==="
+echo "This guide will teach you the basics of network configuration, including managing network interfaces, setting up routes, and troubleshooting network issues."
+echo ""
+
+# CHAPTER 1: NETWORK INTERFACES
+echo "=== CHAPTER 1: NETURING NETWORK INTERFACES ==="
+echo "Let's start by learning how to view and configure network interfaces."
+echo ""
+
+# Step 1: View network interfaces
+echo "Step 1: First, let's see the available network interfaces on your system. Use the 'ip addr show' or 'ifconfig' command."
+echo "The 'ip addr show' command displays information about all network interfaces, including their IP addresses and status."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ip addr show"
+echo ""
+echo "You should see a list of network interfaces (e.g., eth0, wlan0). Each interface has an IP address and other details."
+echo ""
+
+# Step 2: Check the status of a specific interface
+echo "Step 2: Now let's check the status of a specific interface. Use the 'ip link show <interface>' command, replacing <interface> with the name of your interface (e.g., eth0)."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ip link show"
+echo ""
+echo "This command shows whether the interface is UP (active) or DOWN (inactive)."
+echo ""
+
+# Step 3: Bring an interface up or down
+echo "Step 3: Let's learn how to bring a network interface up or down. Use the 'ip link set <interface> up' or 'ip link set <interface> down' command."
+echo "For example, to bring 'eth0' up, you would use: 'ip link set eth0 up'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ip link set eth0 up"
+echo ""
+echo "If the command succeeds, the interface should now be active. You can verify this by running 'ip link show <interface>' again."
+echo ""
+
+# CHAPTER 2: NETWORK ROUTES
+clear
+echo "=== CHAPTER 2: CONFIGURING NETWORK ROUTES ==="
+echo "Now let's learn how to view and configure network routes."
+echo ""
+
+# Step 4: View the routing table
+echo "Step 4: First, let's view the current routing table. Use the 'ip route show' command."
+echo "The routing table shows how traffic is directed between networks."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ip route show"
+echo ""
+echo "You should see a list of routes, including the default gateway and any specific routes for your network."
+echo ""
+
+# Step 5: Add a static route
+echo "Step 5: Now let's add a static route. Use the 'ip route add' command. For example, to add a route to the network 192.168.2.0/24 via gateway 192.168.1.1, use:"
+echo "'ip route add 192.168.2.0/24 via 192.168.1.1'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ip route add 192.168.2.0/24 via 192.168.1.1"
+echo ""
+echo "The route has been added. You can verify it by running 'ip route show' again."
+echo ""
+
+# Step 6: Delete a static route
+echo "Step 6: To delete a route, use the 'ip route del' command. For example, to delete the route we just added, use:"
+echo "'ip route del 192.168.2.0/24 via 192.168.1.1'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ip route del 192.168.2.0/24 via 192.168.1.1"
+echo ""
+echo "The route has been removed. Verify this by running 'ip route show' again."
+echo ""
+
+# CHAPTER 3: BASIC NETWORK TROUBLESHOOTING
+clear
+echo "=== CHAPTER 3: BASIC NETWORK TROUBLESHOOTING ==="
+echo "Now let's learn some basic network troubleshooting techniques."
+echo ""
+
+# Step 7: Ping a remote host
+echo "Step 7: Let's test connectivity to a remote host using the 'ping' command. For example, to ping Google's DNS server, use: 'ping 8.8.8.8'."
+echo "Press Ctrl+C to stop the ping command."
+echo ""
+read -p "Write the command & press Enter: "
+eval "ping 8.8.8.8"
+echo ""
+echo "If you see replies, your network is working correctly. If not, there may be a connectivity issue."
+echo ""
+
+# Step 8: Trace the route to a remote host
+echo "Step 8: Now let's trace the route to a remote host using the 'traceroute' command. For example, to trace the route to Google's DNS server, use: 'traceroute 8.8.8.8'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "traceroute 8.8.8.8"
+echo ""
+echo "This command shows the path your traffic takes to reach the destination. Each hop represents a router or gateway along the way."
+echo ""
+
+# Step 9: Check DNS resolution
+echo "Step 9: Finally, let's check DNS resolution using the 'nslookup' command. For example, to resolve 'google.com', use: 'nslookup google.com'."
+echo ""
+read -p "Write the command & press Enter: "
+eval "nslookup google.com"
+echo ""
+echo "This command shows the IP address associated with the domain name. If it fails, there may be a DNS issue."
+echo ""
+
+# Conclusion
+echo "=== CONGRATULATIONS! ==="
+echo "You've completed the beginner level of network configuration!"
+echo "You've learned how to manage network interfaces, configure routes, and troubleshoot basic network issues."
+echo ""
+read -p "Press Enter to return to the main menu."
+show_main_menu
